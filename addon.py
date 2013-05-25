@@ -5,10 +5,7 @@ import xbmcgui
 import xbmcplugin
 import os
 import xbmcaddon
-import urllib2
-import re
-import calendar
-import datetime
+import sys
 
 def addImageLink(name,url):
     addon = xbmcaddon.Addon(id='plugin.image.icm')
@@ -21,5 +18,7 @@ def addImageLink(name,url):
 addImageLink('Elbląg', 'http://new.meteo.pl/um/metco/mgram_pict.php?ntype=0u&row=352&col=222&lang=pl')
 addImageLink('Gdańsk', 'http://new.meteo.pl/um/metco/mgram_pict.php?ntype=0u&row=346&col=210&lang=pl')
 addImageLink('Chłapowo', 'http://new.meteo.pl/um/metco/mgram_pict.php?ntype=0u&row=334&col=206&lang=pl')
+
+print sys.builtin_module_names
 
 xbmcplugin.endOfDirectory(handle=int(sys.argv[1]), succeeded=True, updateListing=False, cacheToDisc=True)
